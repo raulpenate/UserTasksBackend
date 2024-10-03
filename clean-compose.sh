@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET_DIR="mssql"
+TARGET_DIR="mssql_data"
 
 # Check if the target directory exists
 if [ -d "$TARGET_DIR" ]; then
@@ -11,7 +11,10 @@ else
 fi
 
 # Create the SQL initialization file
-echo "CREATE DATABASE test_integral;" > "mssql/init.sql"
+# Tried it but instead i used master
+# echo "CREATE DATABASE test_integral;" > "$TARGET_DIR/init.sql"
+
+mkdir $TARGET_DIR
 
 # Change ownership of the target directory
 sudo chown 10001:10001 "$TARGET_DIR"
