@@ -22,7 +22,6 @@ async function bootstrap() {
     .setTitle('API Test Integral')
     .setDescription('User and Tasks endpoints documentation')
     .setVersion('1.0')
-    .addTag('cats')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-docs', app, document);
