@@ -1,0 +1,27 @@
+version: '3.8'
+
+volumes:
+  mssql_data:
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=${DB_PASSWORD}
+      - MSSQL_PID=Developer
+    ports:
+      - 1433:1433
+    volumes:
+      - mssql_data:/var/opt/mssql
+    restart: always
+
+  sqlserver.configurator:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+    command: >
+      bash -c '
+      /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P ${DB_PASSWORD} -d master -i /docker-entrypoint-initdb.d/init.sql;
+      echo "All done!";
+      '
