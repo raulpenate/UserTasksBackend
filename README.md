@@ -34,9 +34,6 @@ Accede a Swagger UI en `http://localhost:3000/api-docs`
 
 ### POST `/api/user`
 - **Descripción**: Crear un nuevo usuario.
-
-### GET `/api/user`
-- **Descripción**: Obtener todos los usuarios.
 ```json
 {
   "firstName": "Tomas",
@@ -44,6 +41,9 @@ Accede a Swagger UI en `http://localhost:3000/api-docs`
   "age": 20,
   "id": "E9F1423E-F36B-1410-8A51-0032650D1446"
 }
+
+### GET `/api/user`
+- **Descripción**: Obtener todos los usuarios.
 ```
 
 ### GET `/api/user/{id}`
