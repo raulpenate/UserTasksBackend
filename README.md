@@ -12,13 +12,18 @@ Esta es una aplicación para usuarios y tareas.
 
 Las variables de `.env` son visibles solo para mostrar que fueron implementadas; esto nunca sucedería en la vida real. En la vida real se debería copiar `.env.template` y cambiarlo a las variables de entorno.
 
+Claro, aquí tienes el mensaje mejorado y con el formato Markdown:
+
+Se evitaron **code smells** y se implementaron los principios **SOLID**.Si no ven muchos comentarios es porque el código es autoexplicativo, y mejor se omitieron muchos comentarios para no ser redundantes, ya que, por sí mismo, [es una mala práctica](https://refactoring.guru/smells/comments). El mejor comentario es un buen nombre para el método, atributo o clase.
+
+
 > [!IMPORTANT]  
 > Si estás en Linux/WSL, ejecuta: 
 > ```bash
-> sudo chown 10001:10001 mssql
+> sudo chown 10001:10001 mssql_data
 > ```
 > [Click aquí para explicación.](https://stackoverflow.com/a/77808783/15445661)
-> TL;DR: Para poder mapear `/var/mssql-data` a la carpeta llamada `mssql` en el proyecto.
+> TL;DR: Para poder mapear `/var/mssql-data` a la carpeta llamada `mssql_data` en el proyecto.
 
 ## Configuración del proyecto
 
@@ -55,7 +60,7 @@ pnpm run start:prod
 Si deseas hacer cambios en `docker-compose.yml`, puedes usar `clean-compose.sh` para limpiarlo. Al ser `bash` se necesita Linux/WSL para correrse, pero se puede agregar su versión `.ps1` para usuarios Windows si llegara a ser necesario.
 
 > [!WARNING]  
-> Esto eliminará la carpeta `mssql` donde esta toda la data del contenedor y, dado que se borro, se volverá  a aplicar el `chown`. 
+> Esto eliminará la carpeta `mssql_data` donde esta toda la data del contenedor y, dado que se borro, se volverá  a aplicar el `chown`. 
 ```bash
 # Solo la primera vez
 sudo chmod +x clean-compose.sh
