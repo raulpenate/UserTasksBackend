@@ -25,40 +25,6 @@ Se evitaron **code smells** y se implementaron los principios **SOLID**. No se i
 > Si estas en Windows:
 > Puede que ser necesario crear la carpeta `mssql_data` si te lo pide.
 
-## Configuración del proyecto
-
-Primero, instala las dependencias:
-
-```bash
-$ pnpm install
-```
-
-### ¿Necesitas instalar `pnpm`?
-```bash
-npm install -g pnpm
-
-# Verifica la instalación
-pnpm -v
-```
-
-### ¿Por qué `pnpm`?
-`pnpm` optimiza el espacio en disco y mejora la velocidad de instalación de paquetes al compartir dependencias entre proyectos.
-
-## Ejecutar el proyecto localmente
-
-Para compilar y ejecutar el proyecto localmente, usa los siguientes comandos:
-
-```bash
-# Modo desarrollo
-pnpm run start
-
-# Modo vigilancia (hot-reload)
-pnpm run start:dev
-
-# Modo producción
-pnpm run start:prod
-```
-
 # Endpoints
 
 # Documentación de Swagger
@@ -102,6 +68,51 @@ Accede a Swagger UI en `http://localhost:3000/api-docs`
 ### GET `/api/task/user/{id}`
 - **Descripción**: Obtener tareas por el ID del usuario.
 
+
+## Configuración del proyecto
+
+Primero, instala las dependencias:
+
+```bash
+$ pnpm install
+```
+
+### ¿Necesitas instalar `pnpm`?
+```bash
+npm install -g pnpm
+
+# Verifica la instalación
+pnpm -v
+```
+
+### ¿Por qué `pnpm`?
+`pnpm` optimiza el espacio en disco y mejora la velocidad de instalación de paquetes al compartir dependencias entre proyectos.
+
+## Ejecutar el proyecto localmente
+
+Para compilar y ejecutar el proyecto localmente, usa los siguientes comandos:
+
+```bash
+# Modo desarrollo
+pnpm run start
+
+# Modo vigilancia (hot-reload)
+pnpm run start:dev
+
+# Modo producción
+pnpm run start:prod
+```
+
+### Correr db local
+Para ejecutar la base de datos mssql necesitas usar correr `docker-compose.yaml`, usa el siguiente comando:
+```bash
+docker-compose up
+```
+
+Si necesita hacerle un cambio al archivo `docker-compose.yaml`:
+```bash
+docker-compose up --force-recreate   
+```
 
 ## Uso de Docker
 
