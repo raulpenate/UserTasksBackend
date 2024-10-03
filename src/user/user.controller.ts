@@ -2,7 +2,8 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiResponse, ApiOkResponse } from '@nestjs/swagger';
+import { User } from './entities/user.entity';
 
 @ApiTags('user')
 @Controller('user')
@@ -13,6 +14,7 @@ export class UserController {
   @ApiOperation({ summary: 'Create a new user' })
   @ApiResponse({ status: 201, description: 'The user has been successfully created.' })
   @ApiResponse({ status: 500, description: 'Internal server error.' })
+  @ApiOkResponse({type: User})
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
@@ -21,6 +23,7 @@ export class UserController {
   @ApiOperation({ summary: 'Get all users' })
   @ApiResponse({ status: 200, description: 'Return all users.' })
   @ApiResponse({ status: 500, description: 'Internal server error.' })
+  @ApiOkResponse({type: User})
   findAll() {
     return this.userService.findAll();
   }
@@ -30,6 +33,7 @@ export class UserController {
   @ApiResponse({ status: 200, description: 'Return the user with the given ID.' })
   @ApiResponse({ status: 404, description: 'User not found.' })
   @ApiResponse({ status: 500, description: 'Internal server error.' })
+  @ApiOkResponse({type: User})
   findOne(@Param('id') id: string) {
     return this.userService.findOne(id);
   }
@@ -39,6 +43,7 @@ export class UserController {
   @ApiResponse({ status: 200, description: 'The user has been successfully updated.' })
   @ApiResponse({ status: 404, description: 'User not found.' })
   @ApiResponse({ status: 500, description: 'Internal server error.' })
+  @ApiOkResponse({type: User})
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(id, updateUserDto);
   }
