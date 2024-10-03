@@ -20,6 +20,8 @@ Se evitaron **code smells** y se implementaron los principios **SOLID**. No se i
 > ```
 > [Más detalles aquí](https://stackoverflow.com/a/77808783/15445661).  
 > TL;DR: Esto es para mapear `/var/mssql-data` a la carpeta `mssql_data` en el proyecto.
+> Si estas en Windows:
+> Puede que ser necesario crear la carpeta `mssql_data` si te lo pide.
 
 ## Configuración del proyecto
 
