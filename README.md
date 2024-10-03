@@ -7,7 +7,7 @@
 
 ## Descripción
 
-Esta es una aplicación para la gestión de usuarios y tareas.
+Esta es una aplicación para la gestión de usuarios y tareas. Se usaron `UUID` para las llaves primarias de ambas tablas.
 
 Las variables de `.env` son visibles solo para mostrar que fueron implementadas; esto nunca sucedería en la vida real. En un proyecto real, deberías copiar el archivo `.env.template` y configurarlo con tus variables de entorno correctas.
 
@@ -37,6 +37,14 @@ Accede a Swagger UI en `http://localhost:3000/api-docs`
 
 ### GET `/api/user`
 - **Descripción**: Obtener todos los usuarios.
+```json
+{
+  "firstName": "Tomas",
+  "lastName": "Ra",
+  "age": 20,
+  "id": "E9F1423E-F36B-1410-8A51-0032650D1446"
+}
+```
 
 ### GET `/api/user/{id}`
 - **Descripción**: Obtener un usuario por su ID.
@@ -52,6 +60,14 @@ Accede a Swagger UI en `http://localhost:3000/api-docs`
 
 ### POST `/api/task`
 - **Descripción**: Crear una nueva tarea.
+```json
+{
+  "title": "Tarea nueva",
+  "description": "Haciendo cosas",
+  "completed": false,
+  "userId": "E1F1423E-F36B-1410-8A51-0032650D1446"
+}
+```
 
 ### GET `/api/task`
 - **Descripción**: Obtener todas las tareas.
