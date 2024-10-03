@@ -37,14 +37,13 @@ Accede a Swagger UI en `http://localhost:3000/api-docs`
 ```json
 {
   "firstName": "Tomas",
-  "lastName": "Ra",
+  "lastName": "Padilla",
   "age": 20,
-  "id": "E9F1423E-F36B-1410-8A51-0032650D1446"
 }
+```
 
 ### GET `/api/user`
 - **Descripción**: Obtener todos los usuarios.
-```
 
 ### GET `/api/user/{id}`
 - **Descripción**: Obtener un usuario por su ID.
