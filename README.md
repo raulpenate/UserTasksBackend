@@ -59,6 +59,50 @@ pnpm run start:dev
 pnpm run start:prod
 ```
 
+# Endpoints
+
+# Documentación de Swagger
+Accede a Swagger UI en `http://localhost:3000/api-docs`
+
+## Endpoints de Usuario
+
+### POST `/api/user`
+- **Descripción**: Crear un nuevo usuario.
+
+### GET `/api/user`
+- **Descripción**: Obtener todos los usuarios.
+
+### GET `/api/user/{id}`
+- **Descripción**: Obtener un usuario por su ID.
+
+### PATCH `/api/user/{id}`
+- **Descripción**: Actualizar los detalles de un usuario por su ID.
+
+### DELETE `/api/user/{id}`
+- **Descripción**: Eliminar un usuario por su ID.
+
+
+## Endpoints de Tarea
+
+### POST `/api/task`
+- **Descripción**: Crear una nueva tarea.
+
+### GET `/api/task`
+- **Descripción**: Obtener todas las tareas.
+
+### GET `/api/task/{id}`
+- **Descripción**: Obtener una tarea por su ID.
+
+### PATCH `/api/task/{id}`
+- **Descripción**: Actualizar el estado de una tarea por su ID.
+
+### DELETE `/api/task/{id}`
+- **Descripción**: Eliminar una tarea por su ID.
+
+### GET `/api/task/user/{id}`
+- **Descripción**: Obtener tareas por el ID del usuario.
+
+
 ## Uso de Docker
 
 Si prefieres correr la aplicación en Docker, sigue estos pasos:
