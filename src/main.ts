@@ -1,10 +1,23 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // new route
+  app.setGlobalPrefix('api');
+
+  // To now allow extra properties in request
+  app.use(
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+    }),
+  );
+
+  // swagger
   const config = new DocumentBuilder()
     .setTitle('API Test Integral')
     .setDescription('User and Tasks endpoints documentation')
@@ -14,6 +27,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-docs', app, document);
 
-  await app.listen(3000);
+  await app.listen(process.env.PORT);
 }
 bootstrap();
